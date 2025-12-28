@@ -1,0 +1,211 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 0;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.navbar .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.navbar .logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #4CAF50;
+  letter-spacing: 1px;
+}
+
+/* Menu Navigation */
+.navbar .nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  align-items: center;
+}
+
+.navbar .nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar .nav-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #4CAF50;
+  transition: width 0.3s ease;
+}
+
+.navbar .nav-menu li a:hover {
+  color: #4CAF50;
+}
+
+.navbar .nav-menu li a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section dengan Gambar */
+.Gambar-home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.Gambar-home img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.7);
+}
+
+/* Hero Text Overlay */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
+  max-width: 800px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.hero-text h1 {
+  font-size: 56px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.95;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Content Section (untuk konten tambahan di bawah) */
+.content-section {
+  padding: 80px 50px;
+  background: white;
+  min-height: 100vh;
+}
+
+.content-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.content-section p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar .container {
+    padding: 15px 20px;
+  }
+  
+  .navbar .logo {
+    font-size: 24px;
+  }
+  
+  .navbar .nav-menu {
+    gap: 20px;
+  }
+  
+  .navbar .nav-menu li a {
+    font-size: 14px;
+  }
+  
+  .hero-text h1 {
+    font-size: 36px;
+  }
+  
+  .hero-text p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .navbar .nav-menu {
+    gap: 15px;
+  }
+  
+  .navbar .nav-menu li a {
+    font-size: 13px;
+  }
+  
+  .hero-text h1 {
+    font-size: 28px;
+  }
+  
+  .hero-text p {
+    font-size: 14px;
+  }
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Add scroll effect to navbar */
+@media (min-width: 769px) {
+  .navbar.scrolled .container {
+    padding: 15px 50px;
+  }
+}
