@@ -18,8 +18,18 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
+            'username' => 'testuser',
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'role' => 'user',
+        ]);
+
+        User::factory()->create([
+            'username' => 'admin',
+            'name' => 'Admin User',
+            'email' => 'admin@growearth.com',
+            'password' => bcrypt('password'), // Ensure password is hashed if factory doesn't do it dynamically enough for specific override
+            'role' => 'admin',
         ]);
     }
 }
